@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>十番音乐节奏接龙</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<canvas id="画布"></canvas>
+
+<div class="顶层按钮区 隐藏" id="游戏按钮区">
+  <button id="暂停按钮">暂停</button>
+  <button id="重开本关按钮">重开本关</button>
+  <button id="回主页按钮">回主页</button>
+</div>
+
+<div id="主页" class="遮罩">
+  <div class="主页卡">
+    <div class="主页头">
+      <div>
+        <div class="眉题">十番雅韵 · 鼓锣相和 · 节奏接龙</div>
+        <div class="标题">十番音乐<br>节奏接龙</div>
+        <div class="副标题">听一段，打一段。跟着鼓与锣的节奏，完成一场热闹的十番接龙。</div>
+      </div>
+      <div class="乐器展示">
+        <img id="主页鼓图" alt="鼓">
+        <img id="主页锣图" alt="锣">
+      </div>
+    </div>
+
+    <div class="主按钮区">
+      <button id="开始按钮" class="大按钮">开始游戏</button>
+      <button id="设置按钮" class="菜单按钮">演奏设置</button>
+      <button id="试听按钮" class="菜单按钮">试敲乐器</button>
+    </div>
+
+    <div id="设置面板" class="面板 隐藏">
+      <div class="面板标题">选择模式</div>
+      <div class="按钮行">
+        <button class="模式按钮 选中" data-mode="easy">轻松模式</button>
+        <button class="模式按钮" data-mode="normal">标准模式</button>
+        <button class="模式按钮" data-mode="hard">挑战模式</button>
+      </div>
+      <div class="说明文字" id="模式说明" style="margin-top:10px;">当前：轻松模式。判定更宽松，适合展示和初次试玩。</div>
+
+      <div class="面板标题" style="margin-top:14px;">起始关卡</div>
+      <select id="关卡选择">
+        <option value="0">第1关：慢板开场</option>
+        <option value="1">第2关：鼓锣问答</option>
+        <option value="2">第3关：双响接龙</option>
+        <option value="3">第4关：十番小高潮</option>
+        <option value="4">第5关：欢乐彩尾</option>
+      </select>
+
+      <label class="开关行">
+        <input type="checkbox" id="教学开关" checked>
+        <span>开始前先玩新手教学</span>
+      </label>
+    </div>
+
+    <div id="试听面板" class="面板 隐藏">
+      <div class="面板标题">试敲乐器</div>
+      <div class="按钮行">
+        <button id="试听鼓按钮" class="小按钮">试敲厚鼓</button>
+        <button id="试听锣按钮" class="小按钮">敲锣一下</button>
+        <button id="试听合奏按钮" class="小按钮">鼓锣齐鸣</button>
+      </div>
+    </div>
+
+    <div id="说明面板" class="面板">
+      <div class="面板标题">玩法说明</div>
+      <div class="说明文字">
+        进入游戏后，左半屏任意位置击鼓，右半屏任意位置敲锣。<br>
+        每一关先听示范，再看“三、二、一”倒计时接龙演奏。<br>
+        轨道上的节拍线会提示速度，音符落到底部大乐器附近时点击即可。
+      </div>
+    </div>
+
+    <div class="提示条">打开声音更有感觉。手机左右点击，电脑可用 A 键击鼓、S 键敲锣。</div>
+  </div>
+</div>
+
+<div id="结算页" class="遮罩 隐藏">
+  <div class="结算卡">
+    <div id="结算称号" class="结算称号">特级调音师</div>
+    <div id="结算评价" class="结算评价"></div>
+    <div id="结算数据" class="结算数据"></div>
+    <button id="再来按钮" class="大按钮" style="width:100%;margin-top:16px;">再来一局</button>
+    <button id="结算回主页按钮" class="小按钮" style="width:100%;margin-top:12px;">返回主页</button>
+  </div>
+</div>
+
+<script src="./game.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{width:100%;height:100%;overflow:hidden;background:#ead0a0;font-family:"Microsoft YaHei","PingFang SC","SimHei",sans-serif;touch-action:none;}
+button,select,input{font-family:inherit;}
+canvas{display:block;width:100vw;height:100vh;background:#ead0a0;touch-action:none;}
+
+.隐藏{display:none!important;}
+.遮罩{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 18%,rgba(255,248,226,.96),rgba(236,199,128,.96) 62%,rgba(179,90,43,.92));}
+.主页卡{width:min(760px,95vw);max-height:94vh;overflow:auto;background:linear-gradient(180deg,#fff9ed,#fff2d9);border:3px solid #9f4a22;border-radius:28px;box-shadow:0 18px 42px rgba(93,45,18,.28),inset 0 0 0 2px rgba(255,255,255,.42);padding:22px;color:#5f2b15;position:relative;}
+.主页头{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border-bottom:2px solid rgba(159,74,34,.18);padding-bottom:16px;margin-bottom:16px;position:relative;}
+.眉题{display:inline-block;background:#f7e0b5;border:2px solid rgba(160,78,34,.22);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:900;color:#8b3c1a;margin-bottom:10px;}
+.标题{font-size:clamp(31px,5.5vw,52px);line-height:1.08;font-weight:900;color:#7d2c16;text-shadow:0 2px 0 rgba(255,255,255,.45);letter-spacing:1px;}
+.副标题{margin-top:10px;font-size:clamp(15px,2.6vw,20px);line-height:1.65;font-weight:900;color:#7a4a25;}
+.乐器展示{display:flex;gap:8px;align-items:center;justify-content:center;}
+.乐器展示 img{width:min(120px,18vw);height:min(120px,18vw);object-fit:contain;filter:drop-shadow(0 6px 10px rgba(94,50,20,.18));}
+.主按钮区{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:10px;margin:16px 0;}
+.大按钮,.菜单按钮,.小按钮{appearance:none;border:0;border-radius:18px;font-size:18px;font-weight:900;cursor:pointer;}
+.大按钮{background:linear-gradient(180deg,#c84c25,#a93418);color:#fff;padding:16px 14px;box-shadow:0 7px 0 #772614;font-size:24px;}
+.菜单按钮{background:#f8e1b9;color:#6f3819;border:2px solid #c58a55;padding:13px 12px;}
+.小按钮{background:#fff9ed;color:#7c431f;border:2px solid #dea46d;padding:10px 12px;font-size:16px;}
+.大按钮:active,.菜单按钮:active,.小按钮:active{transform:translateY(3px);}
+.面板{background:#fff4de;border:2px solid rgba(159,74,34,.18);border-radius:20px;padding:14px;margin-top:12px;}
+.面板标题{font-size:20px;font-weight:900;color:#832f18;margin-bottom:10px;}
+.按钮行{display:flex;gap:10px;flex-wrap:wrap;}
+.模式按钮{appearance:none;border-radius:16px;padding:11px 15px;background:#fff9ed;border:2px solid #dea46d;color:#7c431f;font-size:17px;font-weight:900;cursor:pointer;}
+.模式按钮.选中{background:#c94a24;color:#fff;border-color:#a63a1b;box-shadow:0 5px 0 #8f2e17;}
+select{width:100%;padding:12px 14px;border-radius:16px;border:2px solid #dea46d;background:#fff9ed;color:#7c431f;font-size:18px;font-weight:900;outline:none;}
+.说明文字{font-size:16px;line-height:1.75;color:#7f512b;font-weight:900;}
+.开关行{display:flex;align-items:center;gap:10px;margin-top:10px;color:#7f512b;font-size:16px;font-weight:900;}
+.开关行 input{width:22px;height:22px;accent-color:#c94a24;}
+.提示条{margin-top:12px;padding:10px 12px;background:#f7e1b8;border-radius:16px;color:#70401e;font-size:15px;line-height:1.6;font-weight:900;text-align:center;}
+.顶层按钮区{position:fixed;left:12px;right:12px;top:10px;z-index:12;display:flex;justify-content:flex-end;gap:8px;pointer-events:none;}
+.顶层按钮区 button{pointer-events:auto;border:0;border-radius:999px;padding:9px 14px;background:rgba(255,249,237,.92);color:#7d431f;font-size:15px;font-weight:900;box-shadow:0 3px 8px rgba(90,48,20,.18);}
+.结算卡{width:min(620px,94vw);background:#fff9ef;border:3px solid #bd6634;border-radius:28px;box-shadow:0 16px 38px rgba(115,64,26,.22);padding:24px;text-align:center;color:#6d3218;}
+.结算称号{font-size:clamp(30px,5.2vw,48px);line-height:1.18;font-weight:900;color:#832f18;}
+.结算评价{margin-top:10px;font-size:clamp(17px,3vw,23px);line-height:1.6;font-weight:900;color:#a34a22;}
+.结算数据{margin-top:12px;font-size:18px;line-height:1.75;font-weight:900;color:#7f512b;white-space:pre-line;background:#fff3dc;border-radius:18px;padding:12px;}
+@media(max-width:650px){
+  .主页头{grid-template-columns:1fr;}
+  .乐器展示 img{width:78px;height:78px;}
+  .主按钮区{grid-template-columns:1fr;}
+  .主页卡{padding:18px;}
+}
+
+.主页卡:before,.主页卡:after{content:"";position:absolute;width:52px;height:52px;border-color:#b85b2b;opacity:.28;pointer-events:none;}
+.主页卡:before{left:12px;top:12px;border-left:4px solid;border-top:4px solid;border-radius:14px 0 0 0;}
+.主页卡:after{right:12px;bottom:12px;border-right:4px solid;border-bottom:4px solid;border-radius:0 0 14px 0;}
+.标题:after{content:"";display:block;width:138px;height:7px;margin-top:12px;border-radius:999px;background:linear-gradient(90deg,#9f3b1d,#d99b45,#9f3b1d);}
+
