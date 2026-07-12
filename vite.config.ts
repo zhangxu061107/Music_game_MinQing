@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+
+const srcDir = new URL('./src', import.meta.url).pathname
 
 export default defineConfig({
   plugins: [vue()],
   base: './',
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': srcDir,
     },
   },
   build: {
