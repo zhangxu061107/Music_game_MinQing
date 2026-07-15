@@ -31,3 +31,41 @@ Thumbs.db
 *.local
 *.tmp
 *.temp
+
+# Unity generated directories
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Unity generated project/IDE files
+*.csproj
+*.sln
+*.slnx
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.user
+*.userprefs
+*.tmp
+
+# Unity crash and build artifacts
+sysinfo.txt
+crashlytics-build.properties
+*.apk
+*.aab
+*.app
+*.unitypackage
+
+# Keep source assets and their metadata
+!/[Aa]ssets/**/*.meta
